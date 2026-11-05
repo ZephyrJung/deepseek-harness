@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="AI作图">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3b1d6e"/>
+      <stop offset="0.55" stop-color="#6d28d9"/>
+      <stop offset="1" stop-color="#db2777"/>
+    </linearGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#f472b6"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="62" height="62" rx="16" fill="url(#bg)"/>
+  <rect x="1" y="1" width="62" height="62" rx="16" fill="none" stroke="#f0abfc" stroke-opacity=".45"/>
+  <rect x="13" y="15" width="38" height="30" rx="5" fill="none" stroke="#ffffff" stroke-width="2.6"/>
+  <circle cx="23" cy="24.5" r="3.4" fill="#fde68a"/>
+  <path d="M17 41l9.5-9.5 6.5 6 5-4.5L43 41z" fill="url(#sky)" stroke="#ffffff" stroke-width="1.4" stroke-linejoin="round"/>
+  <path d="M50 40l1.7 4.3L56 46l-4.3 1.7L50 52l-1.7-4.3L44 46l4.3-1.7z" fill="#ffffff"/>
+  <path d="M15 51h20" stroke="#ffffff" stroke-opacity=".7" stroke-width="2.4" stroke-linecap="round"/>
+</svg>

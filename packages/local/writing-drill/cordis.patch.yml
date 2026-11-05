@@ -1,0 +1,20 @@
+# Writing drill: propose a writing prompt with a local Ollama model, grade the
+# user's passage with professional writing advice, and iterate until it reaches
+# a high standard.
+#
+# Every field is optional; the values below are the defaults used when the
+# row's config omits them.
+#
+# To change one, replace `config: {}` with a mapping, for example:
+#   config:
+#     baseUrl: http://127.0.0.1:11434
+#     model: qwen3.8:27b-mlx
+#     passScore: 8.0        # 0-10, the grade that counts as "high standard"
+#     temperature: 0.7      # prompt/grade temperature
+#     numPredict: 1600
+#     numCtx: 16384
+#     timeoutMs: 600000
+- insert:
+    - id: writing-drill
+      name: '@local/dsh-writing-drill'
+      config: {}

@@ -1,0 +1,33 @@
+# AI作图: local text-to-image and image-to-image with Draw Things / ComfyUI.
+#
+# Every field is optional; the values below are the defaults used when the row's
+# config omits them. To override one, replace `config: {}` with a mapping, e.g.
+#
+#   config:
+#     backend: auto            # auto | drawthings | drawthings-cli | comfyui
+#     drawthings:
+#       baseUrl: http://127.0.0.1:7860
+#       model: ''
+#     drawthingsCli:           # 免 GUI 后端：与 App 共用模型目录
+#       model: ''
+#       modelsDir: ''
+#     aidraw:                   # 检测到 aidraw 时：drawthings-cli 后端经它调用（无头 pty/参数映射/超时统一处理）
+#       binary: ''             # 留空自动查找（PATH / Homebrew / DrawUtils 项目目录）
+#       enabled: true          # false 则直调 draw-things-cli
+#     comfyui:
+#       baseUrl: http://127.0.0.1:8188
+#       checkpoint: ''
+#     llm:
+#       baseUrl: http://127.0.0.1:11434
+#       model: ahmadwaqar/mai-ui:latest
+#       visionModel: ahmadwaqar/mai-ui:latest
+#     defaults:
+#       width: 1024
+#       height: 1024
+#       steps: 28
+#       cfg: 5
+#       sampler: DPM++ 2M Karras
+- insert:
+    - id: image-studio
+      name: '@local/dsh-image-studio'
+      config: {}

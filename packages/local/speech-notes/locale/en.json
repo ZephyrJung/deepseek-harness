@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Speech Notes",
+    "description": "Record and transcribe with the machine-local v2t tool, then summarize with a local Ollama model."
+  }
+}

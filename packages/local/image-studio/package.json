@@ -1,0 +1,33 @@
+{
+  "name": "@local/dsh-image-studio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "AI作图: local text-to-image and image-to-image studio with Draw Things / ComfyUI, intent-aware prompts and feedback-driven refinement via a local Ollama model.",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "CONTRACT.md",
+    "test/*.mjs"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": []
+    }
+  }
+}

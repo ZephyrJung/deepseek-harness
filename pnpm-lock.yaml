@@ -13406,6 +13406,14 @@ importers:
         specifier: workspace:*
         version: link:../../session/session-projection
 
+  packages/local/image-studio: {}
+
+  packages/local/my-mobile: {}
+
+  packages/local/speech-notes: {}
+
+  packages/local/writing-drill: {}
+
   packages/lsp/lsp:
     devDependencies:
       '@deepseek-ai/cordis':

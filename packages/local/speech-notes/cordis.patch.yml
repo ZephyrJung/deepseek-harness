@@ -1,0 +1,22 @@
+# Speech notes: record/transcribe with the machine-local v2t tool and summarize
+# with a local Ollama model. Every field is optional; the values below are the
+# defaults used when the row's config omits them.
+#
+# To change one, replace `config: {}` with a mapping, for example:
+#   config:
+#     binary: /Users/Zephyr/bin/v2t
+#     chunkSeconds: 12
+#     saveAudio: false
+#     summary:
+#       baseUrl: http://127.0.0.1:11434
+#       model: qwen3.8:27b-mlx
+#       maxChars: 12000
+#       maxChunks: 4
+#       numCtx: 16384
+#       numPredict: 1400
+#       temperature: 0.2
+#       timeoutMs: 600000
+- insert:
+    - id: speech-notes
+      name: '@local/dsh-speech-notes'
+      config: {}

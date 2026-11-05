@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Writing Drill",
+    "description": "A local Ollama model proposes prompts, grades your passages and gives professional writing advice until they reach a high standard."
+  }
+}

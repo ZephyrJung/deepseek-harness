@@ -1,0 +1,30 @@
+# MyMobile: model tools that mirror and control a USB-connected Android phone
+# through the machine-local MobileControl server (adb).
+#
+# Every field is optional; the values below are the defaults used when the row's
+# config omits them. To override one, replace `config: {}` with a mapping, e.g.
+#
+#   config:
+#     binaryPath: /Users/zephyr/bin/mobilecontrol   # 留空则在 ~/bin、/usr/local/bin 等处自动查找
+#     port: 8765                                    # MobileControl 监听端口
+#     autoStart: true                               # 端口无服务时自动拉起二进制
+#     startTimeoutMs: 10000                         # 等待 /api/status 就绪的上限
+#     requestTimeoutMs: 30000                       # 单次请求上限（截图较慢）
+#     screenshotDir: /Users/zephyr/Pictures/MobileControl
+#     adbPath: /Users/zephyr/bin/bin/platform-tools/adb   # 面板上传手机用的 adb；留空自动查找
+#
+#   # 语义解析（面板「指令输入」里的自然语言 → 动作序列）走本机 Ollama：
+#     llm:
+#       enabled: true                              # false = 只用面板内置规则解析
+#       baseUrl: http://127.0.0.1:11434            # 本机 Ollama 地址
+#       model: qwen3.8:27b-mlx                     # 规划模型；需先 ollama pull，且要支持 vision
+#       timeoutMs: 60000                           # 单次规划超时（首次加载模型较慢）
+#       vision: true                               # false = 不把截图发给模型（只做文字规划）
+#       imageWidth: 720                            # 截图下发宽度；720 足够读界面文字且约 100 KB
+#       maxAgentSteps: 0                           # 0（默认）= 不限步数，只有模型说 done 或拿不准时才停；正数才当作硬预算
+#       think: false                               # true = 每步先思考再动手；慢 6-10 倍，容易把输出预算吃光
+#   # 运行轨迹：每轮动作与停止原因写在 ~/.dsh/my-mobile/agent-trace.jsonl（512 KB 滚动清空）
+- insert:
+    - id: my-mobile
+      name: '@local/dsh-my-mobile'
+      config: {}

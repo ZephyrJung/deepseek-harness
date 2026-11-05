@@ -1,0 +1,32 @@
+{
+  "name": "@local/dsh-writing-drill",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Writing drill: a local Ollama model proposes a writing prompt, the user writes a passage, and the model grades it with professional writing advice until it reaches a high standard.",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "test/*.mjs"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": []
+    }
+  }
+}
