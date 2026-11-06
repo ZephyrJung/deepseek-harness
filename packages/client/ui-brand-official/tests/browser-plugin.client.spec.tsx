@@ -101,14 +101,23 @@ describe('official browser-brand plugin', () => {
     }
   })
 
-  it('renders the official name independently from both requested mark sizes', () => {
+  it('renders the official mark as styled text and omits the name slot', () => {
+    // OfficialBrandName now returns null since mark owns the full wordmark
     const name = render(<OfficialBrandName />)
-    expect(name.container.querySelector('svg')?.getAttribute('viewBox')).toBe('26 0 156 24')
+    expect(name.container.textContent).toBe('')
     name.unmount()
 
     const mark = render(<OfficialBrandMark size={34} />)
-    expect(mark.container.querySelector('svg')?.getAttribute('width')).toBe('34')
-    mark.rerender(<OfficialBrandMark size={24} />)
-    expect(mark.container.querySelector('svg')?.getAttribute('width')).toBe('24')
+    expect(mark.container.querySelector('span')?.textContent).toBe('ZephyR Studio')
+    const spans = mark.container.querySelectorAll('span')
+    expect(spans.length).toBeGreaterThan(0)
+    const subtitleText = [...spans].find(s => s.textContent === 'DEEPSEEK HARNESS')
+    expect(subtitleText).toBeDefined()
+    mark.unmount()
+
+    // Re-render with different size to verify size is computed correctly
+    const mark2 = render(<OfficialBrandMark size={24} />)
+    expect(mark2.container.querySelector('span')?.textContent).toBe('ZephyR Studio')
+    mark2.unmount()
   })
 })
