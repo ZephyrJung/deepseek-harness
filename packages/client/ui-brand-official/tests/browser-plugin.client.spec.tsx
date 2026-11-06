@@ -115,7 +115,7 @@ describe('official browser-brand plugin', () => {
     expect(subtitleText).toBeDefined()
     mark.unmount()
 
-    // Re-render with different size to verify size is computed correctly
+    // Re-render with different size to verify size is passed through correctly
     const mark2 = render(<OfficialBrandMark size={24} />)
     expect(mark2.container.querySelector('span')?.textContent).toBe('ZephyR Studio')
     mark2.unmount()
