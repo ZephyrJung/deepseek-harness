@@ -26,7 +26,7 @@ export function BrandWordmark({ size = 24, className }: BrandWordmarkProps) {
         style={{ fontSize: size * 0.44, fontWeight: 400, letterSpacing: '0.08em', lineHeight: '9px', color: 'var(--dsw-alias-label-secondary)', marginTop: '1px' }}
         aria-hidden="true"
       >
-        deepseek harness
+        DEEPSEEK HARNESS
       </span>
     </span>
   )
